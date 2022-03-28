@@ -10,14 +10,12 @@ export const ACTIONS = {
 }
 
 function reducer(todos, action) {
-  switch(action.type) {
+  switch (action.type) {
     case ACTIONS.ADD_TODO:
       return [...todos, newTodo(action.payload.name)]
     case ACTIONS.TOGGLE_TODO:
       return todos.map(todo => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, complete: !todo.complete}
-        } 
+        if (todo.id === action.payload.id) return { ...todo, complete: !todo.complete }
         return todo
       })
     case ACTIONS.DELETE_TODO:
@@ -28,7 +26,7 @@ function reducer(todos, action) {
 }
 
 function newTodo(name) {
-  return { id: Date.now(), name: name, complete: false}
+  return { id: Date.now(), name: name, complete: false }
 }
 
 function App() {
@@ -38,7 +36,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name }})
+    dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } })
     setName('')
   }
 
@@ -51,7 +49,7 @@ function App() {
         <input type="text" value={name} onChange={e => setName(e.target.value)} />
       </form>
       {todos.map(todo => {
-        return <Todo key={todo.id} todo={todo} dispatch={dispatch}/>
+        return <Todo key={todo.id} todo={todo} dispatch={dispatch} />
       })}
     </div>
   );
