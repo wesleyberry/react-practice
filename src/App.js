@@ -48,9 +48,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={e => setName(e.target.value)} />
       </form>
-      {todos.map(todo => {
-        return <Todo key={todo.id} todo={todo} dispatch={dispatch} />
-      })}
+      {todos.map(todo => <Todo key={todo.id} todo={todo} dispatch={dispatch} /> )}
     </div>
   );
 }

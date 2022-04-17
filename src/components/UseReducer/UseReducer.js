@@ -17,10 +17,10 @@ export const UseReducer = () => {
     console.log('UseReducer Render')
     return (
         <div>
-        <div>{count}</div>
-        <button onClick={() => dispatch('increment')}>Increment</button>
-        <button onClick={() => dispatch('decrement')}>Decrement</button>
-        <button onClick={() => dispatch('reset')}>Reset</button>
+            <div>{count}</div>
+            <button onClick={() => dispatch('increment')}>Increment</button>
+            <button onClick={() => dispatch('decrement')}>Decrement</button>
+            <button onClick={() => dispatch('reset')}>Reset</button>
         </div>
     )
 }
