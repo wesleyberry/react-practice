@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Counter from './components/Counter';
 
 export default function App_4() {
@@ -9,6 +9,15 @@ export default function App_4() {
         { id: 2, count: 0},
         { id: 3, count: 0}
     ])
+
+    // useEffect(() => {
+    //     const fetchData = async() => {
+    //         const response = await fetch(``);
+    //         const data = await response.json()
+    //         setState(data);
+    //     }
+    //     fetchData()
+    // }, [])
 
     function decrement(id) {
         setData(data.map(datum => id === datum.id ? { ...datum, count: datum.count - 1} : datum))
